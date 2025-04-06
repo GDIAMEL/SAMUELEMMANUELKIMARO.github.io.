@@ -9,19 +9,19 @@ This portfolio is a snapshot of my journey so far from learning the core web tec
 I'm not just here to build code. I'm here to build impact.
 ---
 
-## 📌 Project Features
+##  Project Features
 
-- 🎯 **About Me Section** – A short professional bio with key technologies and interests.
-- 🔧 **What I Do** – A clear list of services and capabilities.
-- 📬 **Reach Out Section** – Links to email, GitHub, and LinkedIn.
-- 📝 **Registration Form** – Collects user information in a clean and structured format.
-- 💅 **Modern Styling** – Responsive design with animations and consistent typography.
-- 🖼️ **Profile Image** – Personal branding through a circular profile photo.
-- ⚙️ **Interactive UX** – Smooth transitions and hover effects.
+-  **About Me Section** – A short professional bio with key technologies and interests.
+-  **What I Do** – A clear list of services and capabilities.
+-  **Reach Out Section** – Links to email, GitHub, and LinkedIn.
+-  **Registration Form** – Collects user information in a clean and structured format.
+-  **Modern Styling** – Responsive design with animations and consistent typography.
+-  **Profile Image** – Personal branding through a circular profile photo.
+-  **Interactive UX** – Smooth transitions and hover effects.
 
 ---
 
-## 🛠️ Built With
+## Built With
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
@@ -31,19 +31,11 @@ I'm not just here to build code. I'm here to build impact.
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 ```plaintext
 ├── index.html        # Main HTML file (this project)
-├── profile-pic.png   # Profile image (ensure this matches your image name)
+├── profile-pic.png   # Profile 
 
----
-## Reach Out
-Feel free to contact me for collaborations, discussions, or inquiries:
--  [Email](mailto:emmanuelsamuel2523@gmail.com)
--  [LinkedIn](www.linkedin.com/in/emmanuel-samuel-4a0b7323a)
--  [GitHub](https://github.com/GDIAMEL?tab=overview&from=2024-11-01&to=2024-11-30)
 
-##  License
-This portfolio is created for personal use and web design practice, and **It is not yet completed**.
 
