@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMUEL EMMANUEL KIMARO - MY PORTFOLIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header.profile-header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #4a90e2;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 10px;
+        }
+
+        section {
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357ab8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="profile-header">
+        <img src="C:\Users\Admin\Downloads\profile-pic (8) (5).png" alt="Profile Image" class="profile-image">
+        <h1>Samuel Emmanuel Kimaro - Portfolio</h1>
+    </header>
+
+    <section class="about-me">
+        <h2>About Me</h2>
+        <p>Hi! I'm <strong>Samuel Emmanuel Kimaro</strong>, a passionate web developer with expertise in front-end and back-end technologies. I enjoy creating interactive, user-friendly applications that balance design and functionality. My core skills include HTML, CSS, JavaScript, SQL, and Python, and I’m currently expanding into AI and software development.</p>
+    </section>
+
+    <section class="what-i-do">
+        <h2>What I Do</h2>
+        <ul>
+            <li><strong>Web Development:</strong> Building responsive, visually appealing websites.</li>
+            <li><strong>User Experience Design:</strong> Crafting intuitive and engaging interfaces.</li>
+            <li><strong>Database Management:</strong> Organizing structured data for scalable systems.</li>
+            <li><strong>Automation with Python:</strong> Enhancing productivity through automation.</li>
+            <li><strong>Problem-Solving:</strong> Continuously iterating and optimizing processes.</li>
+        </ul>
+    </section>
+    <!-- Reach Out Section -->
+    <section class="reach-out">
+        <h2>Reach Out</h2>
+        <p>If you'd like to connect, collaborate, or just say hi — feel free to reach out via email or follow me on social media.</p>
+        <ul>
+            <li>Email: <a href="mailto: emmanuelsamuel2523@gmail.com">Email</a></li>
+            <li>LinkedIn: <a href="www.linkedin.com/in/emmanuel-samuel-4a0b7323a" target="_blank">LinkedIn Profile</a></li>
+            <li>GitHub: <a href="https://github.com/GDIAMEL?tab=overview&from=2024-11-01&to=2024-11-30" target="_blank">GitHub Profile</a></li>
+    </section>
+        
+    <!-- Registration Form -->
+    <section class="form-container">
+        <h2>Register Here For Outstanding Services</h2>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="6">
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="100" required>
+
+                <input type="submit" value="Register">
+            </fieldset>
+        </form>
+    </section>
+
+    <footer>
+        <p class="footer-text">Created for CSS and Web Design practice. &copy; 2025 Samuel Emmanuel Kimaro</p>
+    </footer>
+</body>
+
+</html>
