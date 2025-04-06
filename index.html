@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAMUEL EMMANUEL KIMARO - MY PORTFOLIO</title>
+    <title>Samuel Emmanuel Kimaro - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         * {
             margin: 0;
@@ -13,210 +13,172 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
             background: linear-gradient(to right, #ece9e6, #ffffff);
             color: #333;
             line-height: 1.6;
-            padding: 20px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        header.profile-header {
-            text-align: center;
-            padding: 30px 0;
-            background-color: #4a90e2;
-            color: white;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin-bottom: 10px;
-        }
-
-        section {
-            margin: 40px auto;
-            max-width: 800px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background 0.3s, color 0.3s;
-        }
-
-        section:hover {
-            transform: scale(1.02);
-        }
-
-        h2 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        fieldset {
-            border: none;
             padding: 0;
         }
-
-        label {
-            margin: 10px 0 5px;
+        /* Sidebar Styles */
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            padding-left: 20px;
         }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="number"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: border-color 0.3s, background 0.3s, color 0.3s;
+        .sidebar nav ul {
+            list-style: none;
         }
-
-        input:focus {
-            border-color: #4a90e2;
-            outline: none;
+        .sidebar nav ul li {
+            margin: 15px 0;
         }
-
-        input[type="submit"] {
-            margin-top: 20px;
-            padding: 10px;
+        .sidebar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar nav ul li a:hover {
+            color: #4a90e2;
+        }
+        /* Main Content */
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .intro {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .intro h1 {
+            font-size: 2.5rem;
+            color: #4a90e2;
+        }
+        .intro h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .btn {
+            padding: 10px 20px;
             background-color: #4a90e2;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            text-decoration: none;
         }
-
-        input[type="submit"]:hover {
+        .btn:hover {
             background-color: #357ab8;
         }
-
+        .profile-image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .profile-image-container img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+        section {
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        ul li {
+            margin: 10px 0;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
             color: #777;
             font-size: 14px;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Dark Theme */
-        .dark-theme {
-            background: #2c3e50;
-            color: white;
-        }
-
-        .dark-theme section {
-            background: #34495e;
-            color: white;
-        }
-
-        .dark-theme header.profile-header {
-            background-color: #1a252f;
-        }
-
-        .dark-theme input[type="text"],
-        .dark-theme input[type="email"],
-        .dark-theme input[type="password"],
-        .dark-theme input[type="number"] {
-            background: #44566b;
-            color: white;
-            border: 1px solid #bbb;
-        }
-
-        .dark-theme input[type="submit"] {
-            background: #1982c4;
-            color: white;
-        }
-
-        .dark-theme a {
-            color: #66c2ff;
-        }
     </style>
 </head>
-
 <body>
-    <header class="profile-header">
-        <img src="profile-pic (8) (5).png" alt="Profile Image" class="profile-image">
-        <h1>Samuel Emmanuel Kimaro - Portfolio</h1>
-    </header>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-    <section class="about-me">
-        <h2>About Me</h2>
-        <p>Hello! I'm <strong>Samuel Emmanuel Kimaro</strong>, a passionate web developer with expertise in front-end and back-end technologies. I enjoy creating interactive, user-friendly applications that balance design and functionality.</p>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="profile-image-container">
+                <img src="profile-pic.png" alt="Profile Image">
+            </div>
+            <div class="intro">
+                <h1>Hello, My Name is <span>Samuel Emmanuel Kimaro</span></h1>
+                <h2>I'm a Web Developer</h2>
+                <p>I'm a web developer with expertise in front-end and back-end technologies. I specialize in creating interactive, user-friendly applications that balance design and functionality.</p>
+                <button class="btn">More About Me</button>
+                <a href="Samuel_Emmanuel_CV.pdf" class="btn" download>Download CV</a>
+            </div>
+        </section>
 
-    <section class="what-i-do">
-        <h2>What I Do</h2>
-        <ul>
-            <li><strong>Web Development:</strong> Building responsive, visually appealing websites.</li>
-            <li><strong>User Experience Design:</strong> Crafting intuitive and engaging interfaces.</li>
-            <li><strong>Database Management:</strong> Organizing structured data for scalable systems.</li>
-            <li><strong>Automation with Python:</strong> Enhancing productivity through automation.</li>
-            <li><strong>Problem-Solving:</strong> Continuously iterating and optimizing processes.</li>
-        </ul>
-    </section>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a versatile web developer skilled in both front-end and back-end technologies. With a strong background in HTML, CSS, JavaScript, and Python, I specialize in creating dynamic, user-centric web applications. Currently, I'm expanding my expertise in AI and software development.</p>
+        </section>
 
-    <section class="reach-out">
-        <h2>Reach Out</h2>
-        <ul>
-            <li>Email: <a href="mailto: emmanuelsamuel2523@gmail.com">Email</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/emmanuel-samuel-4a0b7323a" target="_blank">LinkedIn Profile</a></li>
-            <li>GitHub: <a href="https://github.com/GDIAMEL" target="_blank">GitHub Profile</a></li>
-        </ul>
-    </section>
+        <!-- Services Section -->
+        <section id="services">
+            <h2>What I Do</h2>
+            <ul>
+                <li><strong>Web Development:</strong> I specialize in building responsive and interactive websites, ensuring they are optimized for both performance and design.</li>
+                <li><strong>User Experience Design:</strong> I craft intuitive and engaging user interfaces that enhance the user experience across all devices.</li>
+                <li><strong>Database Management:</strong> I have experience working with SQL databases to create structured and efficient data management systems.</li>
+                <li><strong>Automation & Scripting:</strong> Using Python, I create scripts to automate tasks and enhance business operations.</li>
+                <li><strong>Consulting:</strong> I offer advice on web technologies, AI integration, and digital presence improvement.</li>
+            </ul>
+        </section>
 
-    <section class="form-container">
-        <h2>Register Here For Outstanding Services</h2>
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Personal Information</legend>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>My Work</h2>
+            <p>Here are some of the projects I've worked on, showcasing my skills in web development, design, and automation:</p>
+            <div class="portfolio-item">
+                <h3>Project Title</h3>
+                <p>Project description and technologies used.</p>
+                <a href="#">View Project</a>
+            </div>
+        </section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>If you’re interested in working together or simply want to connect, feel free to reach out!</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:emmanuelsamuel2523@gmail.com">emmanuelsamuel2523@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/emmanuel-samuel-4a0b7323a" target="_blank">LinkedIn Profile</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/GDIAMEL" target="_blank">GitHub Profile</a></li>
+            </ul>
+        </section>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required minlength="6">
-
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="18" max="100" required>
-
-                <input type="submit" value="Register">
-            </fieldset>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Samuel Emmanuel Kimaro - All Rights Reserved</p>
-    </footer>
-
-    <script src="script.js"></script>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Samuel Emmanuel Kimaro</p>
+        </footer>
+    </main>
 </body>
-
 </html>
