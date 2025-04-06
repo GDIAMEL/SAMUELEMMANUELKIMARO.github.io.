@@ -1,4 +1,4 @@
-# 💼 SAMUEL EMMANUEL KIMARO - PERSONAL PORTFOLIO
+# SAMUEL EMMANUEL KIMARO - PERSONAL PORTFOLIO
 
 Hello and welcome to my portfolio. I’m Samuel Emmanuel Kimaro, a forward-thinking professional with a solid foundation in International Business Management and a growing mastery of tech-driven solutions. I believe in the power of blending traditional business principles with emerging technologies to solve real-world problems.
 
