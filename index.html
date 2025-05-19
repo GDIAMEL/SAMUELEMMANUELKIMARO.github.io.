@@ -1517,21 +1517,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Theme Toggle (Dark/Light Mode)
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        
-        // Save preference to localStorage
-        if (document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-    });
 
-    // Check for saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
+  const toggleButton = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  // Initialize theme from localStorage
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', currentTheme);
+
+  toggleButton.addEventListener('click', () => {
+    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+
 
     // Portfolio Filtering
     filterButtons.forEach(button => {
