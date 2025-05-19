@@ -283,29 +283,55 @@
     color: white;
   }
   
-  .dark-mode-toggle {
-    text-align: center;
-  }
-  
-  #theme-toggle {
-    background-color: var(--bg-color-light);
-    border-radius: var(--radius-full);
-    padding: var(--spacing-xs);
-    color: var(--text-color-dark);
-  }
-  
-  #theme-toggle .fa-sun {
-    display: none;
-  }
-  
-  [data-theme="dark"] #theme-toggle .fa-moon {
-    display: none;
-  }
-  
-  [data-theme="dark"] #theme-toggle .fa-sun {
-    display: inline-block;
-  }
-  
+  :root {
+  --bg-color-light: #fff;
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #000;
+  --text-color-light: #fff;
+  --radius-full: 50%;
+  --spacing-xs: 0.5rem;
+}
+
+/* Default light theme */
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-dark);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+}
+
+.dark-mode-toggle {
+  text-align: center;
+}
+
+#theme-toggle {
+  background-color: var(--bg-color-light);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-xs);
+  color: var(--text-color-dark);
+  border: none;
+  cursor: pointer;
+}
+
+#theme-toggle .fa-sun {
+  display: none;
+}
+
+[data-theme="dark"] #theme-toggle .fa-moon {
+  display: none;
+}
+
+[data-theme="dark"] #theme-toggle .fa-sun {
+  display: inline-block;
+}
+
+[data-theme="light"] #theme-toggle .fa-moon {
+  display: inline-block;
+}
+
   /* Main Content Layout */
   .main-content {
     margin-left: 250px;
@@ -1405,7 +1431,7 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3>Samuel E. Kimaro</h3>
+                        <h3>Samuel Emmanuel Kimaro</h3>
                         <p>Web Developer</p>
                     </div>
                     
