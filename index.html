@@ -283,107 +283,35 @@
     color: white;
   }
   
-  :root {
-  --bg-color-light: #fff;
-  --bg-color-dark: #1e1e1e;
-  --text-color-dark: #000;
-  --text-color-light: #fff;
-  --radius-full: 50%;
-  --spacing-xs: 0.5rem;
-}
-
-/* Default light theme */
-body {
-  background-color: var(--bg-color-light);
-  color: var(--text-color-dark);
-}
-
-[data-theme="dark"] body {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-light);
-}
-
-.dark-mode-toggle {
-  text-align: center;
-}
-
-#theme-toggle {
-  background-color: var(--bg-color-light);
-  border-radius: var(--radius-full);
-  padding: var(--spacing-xs);
-  color: var(--text-color-dark);
-  border: none;
-  cursor: pointer;
-}
-
-:root {
-  --bg-color-light: #ffffff;
-  --bg-color-dark: #1e1e1e;
-  --text-color-light: #000000;
-  --text-color-dark: #ffffff;
-  --radius-full: 50%;
-  --spacing-xs: 0.5rem;
-}
-
-/* Light Theme Defaults */
-body {
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Dark Theme Overrides */
-[data-theme="dark"] body {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
-}
-
-/* Description paragraph — explicitly styled */
-.description {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-top: 1.5rem;
-  color: inherit; /* Inherits theme-appropriate text color */
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-/* Toggle styling */
-.dark-mode-toggle {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-#theme-toggle {
-  background-color: var(--bg-color-light);
-  border-radius: var(--radius-full);
-  padding: var(--spacing-xs);
-  color: var(--text-color-light);
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-/* Icon handling */
-#theme-toggle .fa-sun {
-  display: none;
-}
-
-[data-theme="dark"] #theme-toggle .fa-moon {
-  display: none;
-}
-
-[data-theme="dark"] #theme-toggle .fa-sun {
-  display: inline-block;
-}
-
-[data-theme="light"] #theme-toggle .fa-moon {
-  display: inline-block;
-}
-
+  .dark-mode-toggle {
+    text-align: center;
+  }
+  
+  #theme-toggle {
+    background-color: var(--bg-color-light);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs);
+    color: var(--text-color-dark);
+  }
+  
+  #theme-toggle .fa-sun {
+    display: none;
+  }
+  
+  [data-theme="dark"] #theme-toggle .fa-moon {
+    display: none;
+  }
+  
+  [data-theme="dark"] #theme-toggle .fa-sun {
+    display: inline-block;
+  }
+  
+  /* Main Content Layout */
+  .main-content {
+    margin-left: 250px;
+    transition: var(--transition);
+  }
+  
   /* ======== HOME SECTION ======== */
   .section-home {
     min-height: 100vh;
@@ -1103,14 +1031,10 @@ body {
                     <div class="intro">
                         <p class="subtitle">Software Developer | Data Analyst | Business Analyst</p>
                         <h1 class="title">Samuel Emmanuel <span class="highlight">Kimaro</span></h1>
-                         <button id="theme-toggle">
-                         <i class="fas fa-moon"></i>
-                         <i class="fas fa-sun"></i>
-                         </button>
                         <p class="description">I craft responsive websites and applications that deliver exceptional user experiences, combining innovative design with robust functionality. Beyond development, I bring data-driven decision-making into every project, leveraging analytical tools and methods to uncover insights that drive business growth. With a background in International Business Management and ACCA knowledge, I offer a strategic understanding of global markets, financial systems, and regulatory compliance, making me a bridge between technology, data, and business strategy.</p>
                         <div class="cta-buttons">
-                            <a href="CURRICULUM VITAE SAMUEL EMMANUEL KIMARO.pdf" class="btn btn-primary" download>Download CV <i class="fas fa-download"></i></a>
-                            <a href="#contact" class="btn btn-secondary">Let's Talk <i class="fas fa-arrow-right"></i></a
+                            <a href="RESUME SAMUEL EMMANUEL KIMARO (4).docx" class="btn btn-primary" download>Download CV <i class="fas fa-download"></i></a>
+                            <a href="#contact" class="btn btn-secondary">Let's Talk <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1127,7 +1051,7 @@ body {
                 
                 <div class="about-content">
                     <div class="about-img">
-                        <img src="https://cdn.dribbble.com/users/1059583/screenshots/4171367/media/5c8264a20b247115b68e6c2f4c97d5e6.gif" alt="Samuel working" loading="lazy">
+                        <img src="TILL LATE (1).avif" alt="Samuel working" loading="lazy">
                     </div>
                     
                     <div class="about-text">
@@ -1346,6 +1270,8 @@ body {
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Add more portfolio items here -->
                 </div>
             </div>
         </section>
@@ -1481,7 +1407,7 @@ body {
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3>Samuel Emmanuel Kimaro</h3>
+                        <h3>Samuel E. Kimaro</h3>
                         <p>Web Developer</p>
                     </div>
                     
@@ -1567,7 +1493,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Theme Toggle (Dark/Light Mode)
-
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         
@@ -1583,10 +1508,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
     }
-  
- 
-
-
 
     // Portfolio Filtering
     filterButtons.forEach(button => {
