@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -169,12 +169,11 @@
     height: 4rem;
     background-color: var(--bg-color-light);
     z-index: 100;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--spacing-md);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: none; /* Hidden by default on desktop, shown on mobile */
+    display: flex; /* Show by default, hide on desktop */
   }
   
   .logo a {
@@ -184,10 +183,14 @@
   }
   
   .nav-toggle {
-    display: none;
+    display: flex;
     background: transparent;
     padding: var(--spacing-xs);
     border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
   }
   
   .hamburger {
@@ -196,6 +199,7 @@
     width: 24px;
     height: 2px;
     background-color: var(--text-color-dark);
+    transition: var(--transition);
   }
   
   .hamburger::before,
@@ -657,6 +661,16 @@
     margin: 0 auto;
     max-width: 700px;
     text-align: center;
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .testimonial-card:first-child {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
   }
   
   .testimonial-text {
@@ -872,13 +886,20 @@
   }
   
   /* ======== RESPONSIVE STYLES ======== */
-  @media screen and (max-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     .header {
-      display: flex;
+      display: none;
     }
     
+    .nav-toggle {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
     .sidebar {
       transform: translateX(-100%);
+      transition: transform 0.3s ease;
     }
     
     .sidebar.show {
@@ -891,9 +912,8 @@
     }
     
     .nav-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      cursor: pointer;
+      z-index: 101;
     }
     
     .nav-toggle.active .hamburger {
@@ -910,6 +930,18 @@
       bottom: 0;
     }
     
+    /* Overlay when navigation is open */
+    body.nav-open::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 98;
+    }
+    
     .home-content,
     .about-content {
       grid-template-columns: 1fr;
@@ -919,6 +951,11 @@
     .profile-image-container,
     .about-img {
       margin-bottom: var(--spacing-md);
+    }
+    
+    .profile-image-container img {
+      width: 70%;
+      max-width: 350px;
     }
     
     .about-text,
@@ -950,6 +987,11 @@
     .section {
       padding: var(--spacing-lg) 0;
     }
+    
+    .profile-image-container img {
+      width: 60%;
+      max-width: 300px;
+    }
   }
   
   @media screen and (max-width: 480px) {
@@ -975,6 +1017,11 @@
     .footer-content {
       flex-direction: column;
       text-align: center;
+    }
+    
+    .profile-image-container img {
+      width: 80%;
+      max-width: 250px;
     }
   }
       </style>
@@ -1341,7 +1388,8 @@
                 <div class="testimonial-dots">
                     <span class="dot active"></span>
                     <span class="dot"></span>
-                    <!-- Add more dots as needed -->
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
         </section>
@@ -1458,7 +1506,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Navigation Toggle
     navToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
+        sidebar.classList.toggle('show');
         navToggle.classList.toggle('active');
         document.body.classList.toggle('nav-open');
     });
@@ -1466,10 +1514,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close navigation when a link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            sidebar.classList.remove('active');
+            sidebar.classList.remove('show');
             navToggle.classList.remove('active');
             document.body.classList.remove('nav-open');
         });
+    });
+
+    // Close navigation when clicking outside
+    document.addEventListener('click', (e) => {
+        if (sidebar.classList.contains('show') && 
+            !sidebar.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            sidebar.classList.remove('show');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
     });
 
     // Active link on scroll
@@ -1494,19 +1553,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle (Dark/Light Mode)
     themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
         
         // Save preference to localStorage
-        if (document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
+        localStorage.setItem('theme', newTheme);
     });
 
     // Check for saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
     }
 
     // Portfolio Filtering
@@ -1549,39 +1608,45 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonialCards.forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateX(20px)';
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
+                card.style.display = 'none';
             });
             
             // Show selected testimonial
+            testimonialCards[index].style.display = 'block';
             setTimeout(() => {
-                testimonialCards[index].style.display = 'block';
-                setTimeout(() => {
-                    testimonialCards[index].style.opacity = '1';
-                    testimonialCards[index].style.transform = 'translateX(0)';
-                }, 100);
-            }, 300);
+                testimonialCards[index].style.opacity = '1';
+                testimonialCards[index].style.transform = 'translateX(0)';
+            }, 50);
         });
     });
 
     // Auto-advance testimonials every 5 seconds
     let currentTestimonial = 0;
+    let testimonialInterval;
     
     function autoAdvanceTestimonial() {
         currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
         testimonialDots[currentTestimonial].click();
     }
     
-    const testimonialInterval = setInterval(autoAdvanceTestimonial, 5000);
+    function startAutoAdvance() {
+        testimonialInterval = setInterval(autoAdvanceTestimonial, 5000);
+    }
+    
+    function stopAutoAdvance() {
+        clearInterval(testimonialInterval);
+    }
+    
+    // Start auto-advance
+    startAutoAdvance();
     
     // Pause auto-advance when hovering over testimonials
     document.querySelector('.testimonials-slider').addEventListener('mouseenter', () => {
-        clearInterval(testimonialInterval);
+        stopAutoAdvance();
     });
     
     document.querySelector('.testimonials-slider').addEventListener('mouseleave', () => {
-        clearInterval(testimonialInterval);
+        startAutoAdvance();
     });
 
     // Contact Form Submission
