@@ -1,41 +1,51 @@
-# SAMUEL EMMANUEL KIMARO - PERSONAL PORTFOLIO
+# Samwel Emmanuel Kimaro Portfolio
 
-Hello and welcome to my portfolio. I’m Samuel Emmanuel Kimaro, a forward-thinking professional with a solid foundation in International Business Management and a growing mastery of tech-driven solutions. I believe in the power of blending traditional business principles with emerging technologies to solve real-world problems.
+Welcome to the official personal website portfolio of **Samwel Emmanuel Kimaro**. This repository contains the source code for Samwel's online portfolio, showcasing projects, skills, and professional experience.
 
-I have completed my university degree and taken a bold step into the world of Software development, data analytics, and artificial intelligence, which I believe will shape the future of global commerce and innovation. My passion lies in building systems that are efficient, scalable but also human-centered, and intuitive.
+## Badges & Tech Stack
 
-This portfolio is a snapshot of my journey so far from learning the core web technologies (HTML, CSS, JavaScript, Python) to applying them in real-world projects. Whether it's designing responsive websites, automating processes, or analyzing complex data to drive insights, I approach every task with discipline, curiosity, and a problem-solving mindset.
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-I'm not just here to build code. I'm here to build impact.
+## Socials
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge)](#)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?logo=twitter&logoColor=white&style=for-the-badge)](#)
+[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white&style=for-the-badge)](emmanuelsamuel2523@gmail.com)
+
+## About
+
+This website is designed to present Samwel's work, achievements, and contact information in a beautifully crafted and responsive manner. Built primarily using **HTML**, **CSS**, and **JavaScript**, the site highlights Samwel’s expertise and projects in web development.
+
+## Features
+
+- **Responsive Design**: Viewable on desktops, tablets, and mobile devices.
+- **Project Showcase**: Displays featured projects with descriptions and links.
+- **About Section**: Learn more about Samwel’s background and skills.
+- **Contact Form**: Easily get in touch via a simple contact form.
+- **Interactive Elements**: Smooth navigation and engaging user experience.
+
+## Technologies Used
+
+- **HTML** (71.9%)
+- **CSS** (18.1%)
+- **JavaScript** (10%)
+
+## Getting Started
+
+You can view the live website by visiting [samuelemmanuelkimaro.github.io](https://samuelemmanuelkimaro.github.io/).
+
+To run locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/GDIAMEL/SAMUELEMMANUELKIMARO.github.io.git
+   ```
+2. Open the `index.html` file in your web browser.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
 ---
-
-##  Project Features
-
--  **About Me Section** – A short professional bio with key technologies and interests.
--  **What I Do** – A clear list of services and capabilities.
--  **Reach Out Section** – Links to email, GitHub, and LinkedIn.
--  **Registration Form** – Collects user information in a clean and structured format.
--  **Modern Styling** – Responsive design with animations and consistent typography.
--  **Profile Image** – Personal branding through a circular profile photo.
--  **Interactive UX** – Smooth transitions and hover effects.
-
----
-
-## Built With
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-
----
-
-## File Structure
-
-```plaintext
-├── index.html        # Main HTML file (this project)
-├── profile-pic.png   # Profile 
-
-
-
